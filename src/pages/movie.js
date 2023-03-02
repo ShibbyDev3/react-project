@@ -1,11 +1,11 @@
 import { Container } from "reactstrap";
 
-const MenuPage = () => {
+const MoviePage = () => {
     return(
         <>
-        <p>Menu Page</p>
+        <p>Movie Page</p>
         </>
     )
 }
 
-export default MenuPage
+export default MoviePage

@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
+import HomePage from './pages/home';
+import MoviesPage from './pages/movies';
+import MoviePage from './pages/movie';
+import MenuPage from './pages/menu';
+import ContactPage from './pages/contact';
+
+import Header from './components/header'
+import Footer from './components/footer'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header />
+    <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='movies' element={<MoviesPage />} />
+          <Route path='directory/:campsiteId' element={<MoviePage />}/>
+          <Route path='menu' element={<MenuPage />} />
+          <Route path='contact' element={<ContactPage />} />
+      </Routes>
+    <Footer />
+    </>
   );
 }
 

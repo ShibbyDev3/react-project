@@ -133,7 +133,7 @@ const moviesData = [
         price: `$9.99`,
         showtimes: ``,
         description: `A Brooklyn Plumber named Mario, travels through the Mushroom Kingdom with a Princess named Peach and an Anthropomorphic Mushroom named Toad to find Mario's Brother, Luigi, and to save the world from a ruthless fire breathing Koopa named Bowser.`,
-        genre: `Animation | Advventure`,
+        genre: `Animation | Adventure`,
         director: `Aaron Horvath, Michael Jelenic`,
         cast: `Chris Pratt, Anya Taylor-Joy, Charlie Day, Jack Black, Keegan-Michael Key, Seth Rogen, Fred Armisen, Kevin Michael Richardson, and Sebastian Maniscalco`,
         trailer: `TnGl01FkMMo`,
