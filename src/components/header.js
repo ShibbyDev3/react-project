@@ -13,14 +13,14 @@ const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
         <header>
-        <Navbar dark color='primary' sticky='top' expand='md'>
-                <NavbarBrand className='ms-5' href='/'>
-                    
-                    <h1 className='mt-1'>NuCamp</h1>
+            <div className="container">
+        <Navbar dark expand='md'>
+                <NavbarBrand className="logo" href='/'>
+                    Movie House
                 </NavbarBrand>
                 <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
                 <Collapse isOpen={menuOpen} navbar>
-                    <Nav className='ms-auto' navbar>
+                    <Nav navbar>
                         <NavItem>
                             <NavLink className='nav-link' to='/'>
                                 Home
@@ -44,6 +44,7 @@ const Header = () => {
                     </Nav>
                 </Collapse>
         </Navbar>
+        </div>
         </header>
     );
 }

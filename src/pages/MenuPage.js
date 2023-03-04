@@ -1,4 +1,3 @@
-import { Container } from "reactstrap";
 
 const MenuPage = () => {
     return(

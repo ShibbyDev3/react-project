@@ -1,13 +1,13 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import HomePage from './pages/home';
-import MoviesPage from './pages/movies';
-import MoviePage from './pages/movie';
-import MenuPage from './pages/menu';
-import ContactPage from './pages/contact';
+import HomePage from './pages/HomePage';
+import MoviesPage from './pages/MoviesPage';
+import MoviePage from './pages/MoviePage';
+import MenuPage from './pages/MenuPage';
+import ContactPage from './pages/ContactPage';
 
-import Header from './components/header'
-import Footer from './components/footer'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 function App() {

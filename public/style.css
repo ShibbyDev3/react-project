@@ -1,0 +1,310 @@
+/*Bootstrap Override*/
+div.card {
+  border: #420e11 2px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+  padding: 0;
+}
+
+/* general styles*/
+html {
+  font-size: 62.5%;
+}
+
+html body {
+  font-size: 1.6rem;
+  background-color: #fafafa;
+}
+
+section {
+  padding: 2.5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Kanit", sans-serif;
+  color: #a8232a;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+section h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 3rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 3rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*header & Footer*/
+header,
+footer {
+  background-color: #5b1317;
+}
+
+footer {
+  padding-bottom: 1.5rem;
+}
+
+header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header .navbar {
+  gap: 1.5rem;
+}
+
+header .navbar-nav {
+  gap: 1rem;
+}
+
+header .navbar-brand,
+footer .navbar-brand {
+  font-family: "Kanit", sans-serif;
+  font-size: 4rem;
+  color: #ffffff;
+}
+
+footer .navbar {
+  flex-direction: column;
+}
+
+footer .navbar-brand {
+  margin-right: 0;
+  text-align: center;
+}
+
+footer .social-logos {
+  text-align: center;
+}
+
+footer .navbar-nav {
+  gap: 1rem;
+}
+
+/*home page*/
+#carousel {
+  background-color: #69161a;
+}
+
+.carousel.slide {
+  border: #420e11 2px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  max-width: 110.6rem;
+  margin: 0 auto;
+}
+
+.movieCarousel__bannerLink {
+  display: block;
+}
+
+.carousel-item img {
+  aspect-ratio: 16/9;
+}
+
+.movieCarousel__eyebrow {
+  margin-bottom: 0rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px black;
+}
+
+.movieCarousel__caption {
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0;
+  text-shadow: 0 2px 4px black;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  transition: background-color 0.4s ease;
+  background-color: rgba(105, 22, 26, 0);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(105, 22, 26, 0.3);
+}
+
+/*movie list page*/
+#movies img {
+  aspect-ratio: 2/3;
+  border: #420e11 2px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+#movies img:hover {
+  transform: scale(1.05);
+}
+
+/* individual movie pages*/
+#movieInfo img {
+  aspect-ratio: 2/3;
+  border: #420e11 2px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.videoTrailer {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: #420e11 2px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem;
+}
+
+/* menu */
+.imgContainer {
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: center;
+}
+
+#menu h2 {
+  margin-top: 2.5rem;
+}
+
+#menu .menu__foodHeader {
+  margin-top: 0;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.popcorn {
+  background-image: url(assests/popcorn.jpg);
+}
+
+.nacho {
+  background-image: url(assests/nacho.jpg);
+}
+
+.bratwurst {
+  background-image: url(assests/bratwurst.jpg);
+}
+
+.pizza {
+  background-image: url(assests/pizza.jpg);
+}
+
+.soda {
+  background-image: url(assests/soda.jpg);
+}
+
+.beer {
+  background-image: url(assests/beer.jpg);
+}
+
+.sour {
+  background-image: url(assests/sourworms.jpg);
+}
+
+.chocolate {
+  background-image: url(assests/chocolate.jpg);
+}
+
+/* contact */
+.map {
+  border-style: none;
+  border: #420e11 2px solid;
+}
+
+.card {
+  margin-bottom: 3rem;
+}
+
+.formSubmit {
+  background: #a8232a;
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.formSubmit:hover {
+  background: #5b1317;
+  color: #ffffff;
+}
+
+/* Media Query*/
+
+@media screen and (min-width: 768px) {
+  html body {
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 5rem 0;
+  }
+
+  h1 {
+    font-size: 4.4rem;
+  }
+
+  section h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+
+  footer {
+    padding-bottom: 0rem;
+  }
+
+  footer .navbar-brand {
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+
+  footer .social-logos {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.5rem;
+  }
+
+  .carousel-caption {
+    padding: 1rem 0;
+    bottom: 0;
+  }
+
+  .movieCarousel__eyebrow {
+    font-size: 1.6rem;
+  }
+
+  .movieCarousel__caption {
+    font-size: 5rem;
+  }
+
+  .imgContainer {
+    aspect-ratio: auto;
+  }
+}
