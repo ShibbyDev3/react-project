@@ -1,5 +1,6 @@
 import { Container, Row, Col, Card } from "reactstrap";
 import CustomCarousel from "../components/CustomCarousel";
+import './Home.css'
 
 const HomePage = () => {
   return (

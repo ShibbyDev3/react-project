@@ -22,8 +22,8 @@ section {
   padding: 2.5rem 0;
 }
 
-h1,
-h2,
+section h1,
+section h2,
 h3,
 h4,
 h5,
@@ -32,7 +32,7 @@ h6 {
   color: #a8232a;
 }
 
-h1 {
+section h1 {
   font-size: 3.2rem;
 }
 
@@ -44,11 +44,11 @@ h3 {
   font-size: 2rem;
 }
 
-p {
+section p {
   margin-bottom: 3rem;
 }
 
-ul {
+section ul {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 3rem;
@@ -105,50 +105,7 @@ footer .navbar-nav {
 }
 
 /*home page*/
-#carousel {
-  background-color: #69161a;
-}
 
-.carousel.slide {
-  border: #420e11 2px solid;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  max-width: 110.6rem;
-  margin: 0 auto;
-}
-
-.movieCarousel__bannerLink {
-  display: block;
-}
-
-.carousel-item img {
-  aspect-ratio: 16/9;
-}
-
-.movieCarousel__eyebrow {
-  margin-bottom: 0rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-shadow: 0 2px 4px black;
-}
-
-.movieCarousel__caption {
-  font-family: "Kanit", sans-serif;
-  font-size: 2rem;
-  line-height: 1;
-  margin-bottom: 0;
-  text-shadow: 0 2px 4px black;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  transition: background-color 0.4s ease;
-  background-color: rgba(105, 22, 26, 0);
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-color: rgba(105, 22, 26, 0.3);
-}
 
 /*movie list page*/
 #movies img {
@@ -230,26 +187,6 @@ footer .navbar-nav {
   background-image: url(assests/chocolate.jpg);
 }
 
-/* contact */
-.map {
-  border-style: none;
-  border: #420e11 2px solid;
-}
-
-.card {
-  margin-bottom: 3rem;
-}
-
-.formSubmit {
-  background: #a8232a;
-  color: #ffffff;
-  font-size: 1.6rem;
-}
-.formSubmit:hover {
-  background: #5b1317;
-  color: #ffffff;
-}
-
 /* Media Query*/
 
 @media screen and (min-width: 768px) {
@@ -261,7 +198,7 @@ footer .navbar-nav {
     padding: 5rem 0;
   }
 
-  h1 {
+  section h1 {
     font-size: 4.4rem;
   }
 
