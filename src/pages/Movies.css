@@ -1,0 +1,28 @@
+#movies img {
+    aspect-ratio: 2/3;
+    border: #420e11 2px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  #movies img:hover {
+    transform: scale(1.03);
+  }
+
+  #movies .accordion-button:focus {
+    box-shadow: none;
+  }
+
+  #movies .accordion-button:not(.collapsed) {
+    background: transparent;
+  }
+
+  #movies .accordion-button.collapsed h2 {
+    color: #666666;
+  }
+
+  #movies .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23212529%27%3e%3cpath fill-rule=%27evenodd%27 d=%27M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e");
+    transform: rotate(-180deg);
+}

@@ -24,7 +24,7 @@ section {
 
 section h1,
 section h2,
-h3,
+section h3,
 h4,
 h5,
 h6 {
@@ -40,7 +40,7 @@ section h2 {
   font-size: 2.8rem;
 }
 
-h3 {
+section h3 {
   font-size: 2rem;
 }
 
@@ -104,21 +104,7 @@ footer .navbar-nav {
   gap: 1rem;
 }
 
-/*home page*/
 
-
-/*movie list page*/
-#movies img {
-  aspect-ratio: 2/3;
-  border: #420e11 2px solid;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1.5rem;
-  transition: transform 0.5s ease-in-out;
-}
-
-#movies img:hover {
-  transform: scale(1.05);
-}
 
 /* individual movie pages*/
 #movieInfo img {
@@ -137,55 +123,38 @@ footer .navbar-nav {
 }
 
 /* menu */
-.imgContainer {
-  aspect-ratio: 16/9;
-  background-size: cover;
-  background-position: center;
+.Popcorn {
+  background-image: url(assets/popcorn.jpg);
 }
 
-#menu h2 {
-  margin-top: 2.5rem;
+.Nachos {
+  background-image: url(assets/nacho.jpg);
 }
 
-#menu .menu__foodHeader {
-  margin-top: 0;
+.Bratwurst {
+  background-image: url(assets/bratwurst.jpg);
 }
 
-.price {
-  font-weight: 600;
+.Pizza {
+  background-image: url(assets/pizza.jpg);
 }
 
-.popcorn {
-  background-image: url(assests/popcorn.jpg);
+.Soda {
+  background-image: url(assets/soda.jpg);
 }
 
-.nacho {
-  background-image: url(assests/nacho.jpg);
+.Beer {
+  background-image: url(assets/beer.jpg);
 }
 
-.bratwurst {
-  background-image: url(assests/bratwurst.jpg);
+.Sour {
+  background-image: url(assets/sourworms.jpg);
 }
 
-.pizza {
-  background-image: url(assests/pizza.jpg);
+.Chocolate {
+  background-image: url(assets/chocolate.jpg);
 }
 
-.soda {
-  background-image: url(assests/soda.jpg);
-}
-
-.beer {
-  background-image: url(assests/beer.jpg);
-}
-
-.sour {
-  background-image: url(assests/sourworms.jpg);
-}
-
-.chocolate {
-  background-image: url(assests/chocolate.jpg);
-}
 
 /* Media Query*/
 
@@ -206,7 +175,7 @@ footer .navbar-nav {
     font-size: 3rem;
   }
 
-  h3 {
+  section h3 {
     font-size: 2.4rem;
   }
 
