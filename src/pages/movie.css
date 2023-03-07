@@ -1,0 +1,14 @@
+#movieInfo img {
+    aspect-ratio: 2/3;
+    border: #420e11 2px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+  }
+  
+  .videoTrailer {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: #420e11 2px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3rem;
+  }

@@ -1,8 +1,44 @@
+import { useParams } from 'react-router-dom';
+import { Container, Row, Col } from "reactstrap";
+import { movieData } from "../app/shared/MOVIES";
+import '../pages/movie.css'
 
 const MoviePage = () => {
+    const { path } = useParams();
+    const movie = movieData.find(movie => { return movie.path === path});
+
     return(
         <>
-        <p>Movie Page</p>
+        <section id="movieInfo">
+            <Container>
+                <Row>
+                    <Col xs="12">
+                        <h1>{movie.name}</h1>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="12" md="4">
+                        <img src={movie.poster} alt={movie.name} />
+                    </Col>
+                    <Col xs="12" md="8">
+                        <h2>Trailer</h2>
+                        <iframe className="videoTrailer" src={`https://www.youtube.com/embed/${movie.trailer}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                        {movie.nowPlaying && <><h2>Showtimes</h2>
+                        <p>{movie.showtimes}</p></>}
+                        {!movie.nowPlaying && <><h2>Release Date</h2>
+                        <p>{movie.releaseDate}</p></>}
+                        <h2>About</h2>
+                        <p>{movie.description}</p>
+                        <h2>Genre</h2>
+                        <p>{movie.genre}</p>
+                        <h2>Director</h2>
+                        <p>{movie.director}</p>
+                        <h2>Cast</h2>
+                        <p>{movie.cast}</p>
+                    </Col>
+                </Row>
+            </Container>
+        </section>
         </>
     )
 }
