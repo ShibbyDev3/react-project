@@ -9,7 +9,7 @@ const MenuItems = ({ array, category }) => {
           return (
             <Col xs="12" md="6" key={menuItem.id}>
               <Card>
-                <Row g-0>
+                <Row>
                   <Col xs="12" md="4" className={`imgContainer ${menuItem.name}`}></Col>
                   <Col xs="12" md="8">
                     <CardBody>
