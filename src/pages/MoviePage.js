@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import { movieData } from "../app/shared/MOVIES";
 import '../pages/movie.css'
 import { ShoppingCartContext } from '../context/ShoppingCartContext';
@@ -22,12 +22,12 @@ const MoviePage = () => {
                 <Row>
                     <Col xs="12" md="4">
                         <img src={movie.poster} alt={movie.name} />
-                        {cartItems.find(id => {return id === movie.id}) ? <Link to='/checkout' className="getMovieTicket btn"> Already In Your Cart </Link> : <Link to='/checkout' onClick={() => {addToCart(movie.id)}} className="getMovieTicket btn"> Get Tickets </Link>}
+                        {cartItems.find(id => { return id === movie.id}) + 1 ? <Link to='/checkout' className="getMovieTicket btn"> Already In Your Cart </Link> : <Link to='/checkout' onClick={() => {addToCart(movie.id)}} className="getMovieTicket btn"> Get Tickets </Link>}
                         
                     </Col>
                     <Col xs="12" md="8">
                         <h2>Trailer</h2>
-                        <iframe className="videoTrailer" src={`https://www.youtube.com/embed/${movie.trailer}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                        <iframe className="videoTrailer" src={`https://www.youtube.com/embed/${movie.trailer}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen=""></iframe>
                         {movie.nowPlaying && <><h2>Showtimes</h2>
                         <p>{movie.showtimes}</p></>}
                         {!movie.nowPlaying && <><h2>Release Date</h2>
