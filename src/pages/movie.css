@@ -12,3 +12,20 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     margin-bottom: 3rem;
   }
+
+  .btn.getMovieTicket{
+    color: #ffffff;
+    background:#a8232a;
+    border-color: #a8232a;
+    display: block;
+    width: 80%;
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    margin: 0 auto;
+  }
+
+  .btn.getMovieTicket:hover{
+    background:#420e11;
+    border-color: #420e11;
+    color: #ffffff;
+  }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import {
     Navbar,
     NavbarBrand,
@@ -9,8 +9,10 @@ import {
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import UserLoginForm from './UserLoginForm';
+import { ShoppingCartContext } from '../context/ShoppingCartContext';
 
 const Header = () => {
+    const {cartItems} = useContext(ShoppingCartContext);
     const [menuOpen, setMenuOpen] = useState(false);
     return (
         <header>
@@ -21,7 +23,7 @@ const Header = () => {
                 </NavbarBrand>
                 <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
                 <Collapse isOpen={menuOpen} navbar>
-                    <Nav navbar>
+                    <Nav navbar className="me-auto">
                         <NavItem>
                             <NavLink className='nav-link' to='/'>
                                 Home
@@ -43,6 +45,10 @@ const Header = () => {
                             </NavLink>
                         </NavItem>
                     </Nav>
+                    <NavLink to="/checkout" className="cart ms-auto me-5">
+                            <i className="fa fa-shopping-cart"></i>
+                            { cartItems.length > 0 ? <div className="indicator">!</div> : null}
+                    </NavLink>
                     <UserLoginForm />
                 </Collapse>
         </Navbar>

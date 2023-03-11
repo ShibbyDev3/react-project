@@ -1,9 +1,12 @@
-import { useParams } from 'react-router-dom';
-import { Container, Row, Col } from "reactstrap";
+import { useParams, Link } from 'react-router-dom';
+import { Container, Row, Col, Button } from "reactstrap";
 import { movieData } from "../app/shared/MOVIES";
 import '../pages/movie.css'
+import { ShoppingCartContext } from '../context/ShoppingCartContext';
+import { useContext } from 'react';
 
 const MoviePage = () => {
+    const {cartItems, addToCart} = useContext(ShoppingCartContext);
     const { path } = useParams();
     const movie = movieData.find(movie => { return movie.path === path});
 
@@ -19,6 +22,8 @@ const MoviePage = () => {
                 <Row>
                     <Col xs="12" md="4">
                         <img src={movie.poster} alt={movie.name} />
+                        {cartItems.find(id => {return id === movie.id}) ? <Link to='/checkout' className="getMovieTicket btn"> Already In Your Cart </Link> : <Link to='/checkout' onClick={() => {addToCart(movie.id)}} className="getMovieTicket btn"> Get Tickets </Link>}
+                        
                     </Col>
                     <Col xs="12" md="8">
                         <h2>Trailer</h2>

@@ -38,7 +38,7 @@ const UserLoginForm = () => {
 
   return (
     <>
-      <span className="navbar-text ms-auto">
+      <span className="navbar-text">
         {loginState ? (
           <>
             <Button outline onClick={() => setLoginModalOpen(true)} style={{ color: "white", border: "1px solid white" }}>
