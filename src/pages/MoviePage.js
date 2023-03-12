@@ -29,17 +29,17 @@ const MoviePage = () => {
                         <h2>Trailer</h2>
                         <iframe className="videoTrailer" src={`https://www.youtube.com/embed/${movie.trailer}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen=""></iframe>
                         {movie.nowPlaying && <><h2>Showtimes</h2>
-                        <p>{movie.showtimes}</p></>}
+                        <p>{movie.showtimes.join(` | `)}</p></>}
                         {!movie.nowPlaying && <><h2>Release Date</h2>
                         <p>{movie.releaseDate}</p></>}
                         <h2>About</h2>
                         <p>{movie.description}</p>
                         <h2>Genre</h2>
-                        <p>{movie.genre}</p>
+                        <p>{movie.genre.join(` | `)}</p>
                         <h2>Director</h2>
                         <p>{movie.director}</p>
                         <h2>Cast</h2>
-                        <p>{movie.cast}</p>
+                        <p>{movie.cast.join(`, `)}</p>
                     </Col>
                 </Row>
             </Container>
