@@ -5,7 +5,7 @@ import { useContext } from "react";
 import "../pages/Checkout.css";
 
 const CheckoutPage = () => {
-  const { cartItems } = useContext(ShoppingCartContext);
+  const { cartItems, removeFromCart } = useContext(ShoppingCartContext);
   return (
     <>
       <section>
@@ -22,7 +22,6 @@ const CheckoutPage = () => {
                 const movie = movieData.find((film) => {
                   return film.id === item;
                 });
-                console.log(movie);
                 return (
                   <Row className="cart-item" key={index}>
                     <Col xs="12" md="2">
@@ -31,26 +30,27 @@ const CheckoutPage = () => {
                     <Col>
                       <p className="cart-header">Choose A Time</p>
                       <div className="timeGroup">
-                      {movie.showtimes.map((time, index) => {
-                        return (
-                          <>
-                          
-                            <input type="radio" className="btn-check" id={`${movie.id}-${time}`} autocomplete="off" name={`${movie.id}`} />
-                            <label className="btn btn-outline-primary cartButtons" htmlFor={`${movie.id}-${time}`}>
-                              {time}
-                            </label>
-                            
-                          </>
-                        );
-                      })}
+                        {movie.showtimes.map((time, index) => {
+                          return (
+                            <>
+                              <input type="radio" className="btn-check" id={`${movie.id}-${time}`} autoComplete="off" name={`${movie.id}`} />
+                              <label className="btn btn-outline-primary cartButtons" htmlFor={`${movie.id}-${time}`}>
+                                {time}
+                              </label>
+                            </>
+                          );
+                        })}
                       </div>
                     </Col>
-                    <Col><p className="cart-header">How Many Tickets?</p>
-                    <input type="number" defaultValue="1"
-       min="1"></input></Col>
+                    <Col>
+                      <p className="cart-header">How Many Tickets?</p>
+                      <input type="number" defaultValue="1" min="1"></input>
+                    </Col>
                     <Col className="removeContainer">
-                    <p className="cart-header">Remove?</p>
-                      <Button className="removeButton"><i className="fa fa-trash" aria-hidden="true"></i></Button>
+                      <p className="cart-header">Remove?</p>
+                      <Button className="removeButton" data-movieid={movie.id} onClick={removeFromCart}>
+                        <i className="fa fa-trash" aria-hidden="true"></i>
+                      </Button>
                     </Col>
                   </Row>
                 );
