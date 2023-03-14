@@ -1,6 +1,5 @@
 import { Container, Row, Col } from "reactstrap";
 import MenuItems from "../components/MenuItems";
-//import { menuData } from "../app/shared/MENU";
 import { useEffect, useState } from "react";
 import "./Menu.css";
 

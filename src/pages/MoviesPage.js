@@ -1,9 +1,15 @@
 import { Container, Row, Col } from "reactstrap";
-import { movieData } from "../app/shared/MOVIES";
+import { useState, useEffect } from "react";
 import MovieItems from "../components/MovieItems";
 import "./Movies.css";
 
 const MoviesPage = () => {
+  const [movieData, setMovieData] = useState([]);
+  useEffect(() =>{
+    fetch("https://shibbydev3.github.io/data/moviehouse/movies.json")
+    .then(response => response.json())
+    .then(data => setMovieData(data))
+  },[]);
   return (
     <>
       <section id="movies">

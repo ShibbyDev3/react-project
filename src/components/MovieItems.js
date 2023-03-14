@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const MovieItems = ({ array, nowPlaying }) => {
   return (
     <>
+    {console.log(array)}
       {array.map((movie) => {
         if (movie.nowPlaying === nowPlaying) {
           return (
