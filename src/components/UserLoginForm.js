@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Modal, ModalHeader, ModalBody, FormGroup, Label, Button, ModalFooter } from "reactstrap";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { validateUserLoginForm } from "../utils/validateUserLoginForm";
-import { userData } from "../app/shared/USER";
 
 const UserLoginForm = () => {
   const [loginModalOpen, setLoginModalOpen] = useState(false);
@@ -11,6 +10,13 @@ const UserLoginForm = () => {
   const [formSubmitErrors, setformSubmitErrors] = useState({
     password: ''
   });
+
+  const [userData, setUserData] = useState([]);
+  useEffect(() =>{
+    fetch("https://shibbydev3.github.io/data/moviehouse/users.json")
+    .then(response => response.json())
+    .then(data => setUserData(data))
+  },[]);
   
   const handleLogin = (values) => {
     const user = userData.find((user) => {

@@ -1,14 +1,20 @@
 import { Container, Row, Col, Button } from "reactstrap";
-import { movieData } from "../app/shared/MOVIES";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
-import { useContext } from "react";
+import { useContext,useEffect, useState } from "react";
 import "../pages/Checkout.css";
 
 const CheckoutPage = () => {
   const { cartItems, removeFromCart } = useContext(ShoppingCartContext);
+  const [movieData, setMovieData] = useState([]);
+    useEffect(() =>{
+      fetch("https://shibbydev3.github.io/data/moviehouse/movies.json")
+      .then(response => response.json())
+      .then(data => setMovieData(data))
+    },[]);
+
   return (
     <>
-      <section>
+      {movieData.length && <section>
         <Container>
           <Row>
             <Col>
@@ -61,7 +67,7 @@ const CheckoutPage = () => {
             </Col>
           </Row>
         </Container>
-      </section>
+      </section>}
     </>
   );
 };

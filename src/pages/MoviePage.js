@@ -1,17 +1,23 @@
 import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col } from "reactstrap";
-import { movieData } from "../app/shared/MOVIES";
 import '../pages/movie.css'
 import { ShoppingCartContext } from '../context/ShoppingCartContext';
-import { useContext } from 'react';
+import { useContext,useEffect, useState } from 'react';
 
 const MoviePage = () => {
     const {cartItems, addToCart} = useContext(ShoppingCartContext);
     const { path } = useParams();
-    const movie = movieData.find(movie => { return movie.path === path});
+    const [movie, setMovie] = useState({});
+    
+    useEffect(() =>{
+      fetch("https://shibbydev3.github.io/data/moviehouse/movies.json")
+      .then(response => response.json())
+      .then(data => {setMovie(data.find(movie => { return movie.path === path}))})
+    },[path]);
 
     return(
         <>
+        {movie.name &&
         <section id="movieInfo">
             <Container>
                 <Row>
@@ -44,6 +50,7 @@ const MoviePage = () => {
                 </Row>
             </Container>
         </section>
+        }
         </>
     )
 }
