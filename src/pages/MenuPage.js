@@ -1,9 +1,16 @@
 import { Container, Row, Col } from "reactstrap";
 import MenuItems from "../components/MenuItems";
-import { menuData } from "../app/shared/MENU";
+//import { menuData } from "../app/shared/MENU";
+import { useEffect, useState } from "react";
 import "./Menu.css";
 
 const MenuPage = () => {
+  const [menuData, setMenuData] = useState([]);
+  useEffect(() =>{
+    fetch("https://shibbydev3.github.io/data/moviehouse/menu.json")
+    .then(response => response.json())
+    .then(data => setMenuData(data))
+  },[]);
   return (
     <>
       <section id="menu">

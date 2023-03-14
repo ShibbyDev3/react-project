@@ -4,7 +4,7 @@ import "../pages/Movies.css";
 const MenuItems = ({ array, category }) => {
   return (
     <>
-      {array.map((menuItem) => {
+     {array.map((menuItem) => {
         if (menuItem.category === category) {
           return (
             <Col xs="12" md="6" key={menuItem.id}>
