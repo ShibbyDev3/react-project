@@ -7,8 +7,16 @@ export function ShoppingCartProvider({ children }) {
 
     function addToCart(id){
         setCartItems( currentItems => {
-            return [...currentItems, id];
+            return [...currentItems, {id: id, time: -1, timeValue: `` ,qty: 1}];
         })
+    }
+
+    function modifyTime(id, time, timeValue){
+        const cartItemsIndex = cartItems.findIndex( item => item.id === parseInt(id));
+        const updatedItem = {...cartItems[cartItemsIndex], time: time, timeValue: timeValue};
+        const newCartItems = [...cartItems];
+        newCartItems[cartItemsIndex] = updatedItem;
+        setCartItems(newCartItems);   
     }
 
     function removeFromCart(event){
@@ -19,7 +27,7 @@ export function ShoppingCartProvider({ children }) {
     }
 
     return(
-        <ShoppingCartContext.Provider value={{cartItems, addToCart, removeFromCart}}>
+        <ShoppingCartContext.Provider value={{cartItems, addToCart, removeFromCart, modifyTime}}>
             {children}
         </ShoppingCartContext.Provider>
     )
