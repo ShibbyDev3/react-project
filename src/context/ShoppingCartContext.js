@@ -19,15 +19,23 @@ export function ShoppingCartProvider({ children }) {
         setCartItems(newCartItems);   
     }
 
+    function modifyQty(id, qty){
+        const cartItemsIndex = cartItems.findIndex( item => item.id === parseInt(id));
+        const updatedItem = {...cartItems[cartItemsIndex], qty: parseInt(qty)};
+        const newCartItems = [...cartItems];
+        newCartItems[cartItemsIndex] = updatedItem;
+        setCartItems(newCartItems);  
+    }
+
     function removeFromCart(event){
        const id = parseInt(event.target.closest(`.removeButton `).getAttribute(`data-movieid`));
        setCartItems( currentItems => {
-        return currentItems.filter( item => { return item !== id });
+        return currentItems.filter( item => { return item.id !== id });
        })
     }
 
     return(
-        <ShoppingCartContext.Provider value={{cartItems, addToCart, removeFromCart, modifyTime}}>
+        <ShoppingCartContext.Provider value={{cartItems, addToCart, removeFromCart, modifyTime, modifyQty}}>
             {children}
         </ShoppingCartContext.Provider>
     )

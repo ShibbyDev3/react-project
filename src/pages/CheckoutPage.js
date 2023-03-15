@@ -4,8 +4,9 @@ import { useContext, useEffect, useState } from "react";
 import "../pages/Checkout.css";
 
 const CheckoutPage = () => {
-  const { cartItems, removeFromCart, modifyTime } = useContext(ShoppingCartContext);
+  const { cartItems, removeFromCart, modifyTime, modifyQty } = useContext(ShoppingCartContext);
   const [movieData, setMovieData] = useState([]);
+  console.log(cartItems);
   useEffect(() => {
     fetch("https://shibbydev3.github.io/data/moviehouse/movies.json")
       .then((response) => response.json())
@@ -47,8 +48,7 @@ const CheckoutPage = () => {
                                   onClick={(event) => {
                                     modifyTime(event.target.getAttribute(`data-cartid`), event.target.getAttribute(`data-id`), event.target.innerText);
                                   }}
-                                  htmlFor={`${movie.id}-${time}`}
-                                >
+                                  htmlFor={`${movie.id}-${time}`}>
                                   {time}
                                 </label>
                               </>
@@ -58,7 +58,7 @@ const CheckoutPage = () => {
                       </Col>
                       <Col>
                         <p className="cart-header">How Many Tickets?</p>
-                        <input type="number" defaultValue={item.qty} min="1"></input>
+                        <input type="number" defaultValue={item.qty} min="1" data-cartid={item.id} onChange={(event) => {modifyQty(event.target.getAttribute(`data-cartid`),event.target.value)}}></input>
                       </Col>
                       <Col className="removeContainer">
                         <p className="cart-header">Remove?</p>
