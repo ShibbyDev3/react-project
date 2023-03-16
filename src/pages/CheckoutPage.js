@@ -1,12 +1,12 @@
 import { Container, Row, Col, Button } from "reactstrap";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
 import { useContext, useEffect, useState } from "react";
+import CartSummary from "../components/CartSummary";
 import "../pages/Checkout.css";
 
 const CheckoutPage = () => {
   const { cartItems, removeFromCart, modifyTime, modifyQty } = useContext(ShoppingCartContext);
   const [movieData, setMovieData] = useState([]);
-  console.log(cartItems);
   useEffect(() => {
     fetch("https://shibbydev3.github.io/data/moviehouse/movies.json")
       .then((response) => response.json())
@@ -48,7 +48,8 @@ const CheckoutPage = () => {
                                   onClick={(event) => {
                                     modifyTime(event.target.getAttribute(`data-cartid`), event.target.getAttribute(`data-id`), event.target.innerText);
                                   }}
-                                  htmlFor={`${movie.id}-${time}`}>
+                                  htmlFor={`${movie.id}-${time}`}
+                                >
                                   {time}
                                 </label>
                               </>
@@ -58,7 +59,15 @@ const CheckoutPage = () => {
                       </Col>
                       <Col>
                         <p className="cart-header">How Many Tickets?</p>
-                        <input type="number" defaultValue={item.qty} min="1" data-cartid={item.id} onChange={(event) => {modifyQty(event.target.getAttribute(`data-cartid`),event.target.value)}}></input>
+                        <input
+                          type="number"
+                          defaultValue={item.qty}
+                          min="1"
+                          data-cartid={item.id}
+                          onChange={(event) => {
+                            modifyQty(event.target.getAttribute(`data-cartid`), event.target.value);
+                          }}
+                        ></input>
                       </Col>
                       <Col className="removeContainer">
                         <p className="cart-header">Remove?</p>
@@ -71,7 +80,9 @@ const CheckoutPage = () => {
                 })}
               </Col>
               <Col xs="12" md="4">
-                <div className="total"></div>
+                <div className="total">
+                  <CartSummary />
+                </div>
               </Col>
             </Row>
           </Container>
