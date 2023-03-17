@@ -1,63 +1,79 @@
 #carousel {
-   background-color: #69161a;
+  background-color: #69161a;
+}
+
+.carousel-item {
+  border: #420e11 2px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+}
+
+.movieCarousel__bannerLink {
+  display: block;
+}
+
+.carousel-item img {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+.movieCarousel__eyebrow {
+  margin-bottom: 0rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px black;
+}
+
+.movieCarousel__caption {
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0;
+  text-shadow: 0 2px 4px black;
+}
+
+button.slick-arrow {
+  height: 100%;
+  width: 10%;
+  z-index: 10;
+}
+
+button.slick-arrow.slick-prev {
+  left:0%;
+}
+
+button.slick-arrow.slick-next {
+  right:0%;
+}
+
+button.slick-arrow:before {
+font-size: 3rem;
+}
+
+.carousel-caption{
+  width: 76.5%;
+}
+
+button.slick-arrow:hover {
+  background-color: rgba(105, 22, 26, 0.3);
+}
+
+#menuAd .card,
+#loyaltyAd .card {
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-caption {
+    padding: 1rem 0;
+    bottom: 0;
   }
-  
-  .carousel.slide {
-    border: #420e11 2px solid;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    max-width: 110.6rem;
-    margin: 0 auto;
-  }
-  
-  .movieCarousel__bannerLink {
-    display: block;
-  }
-  
-  .carousel-item img {
-    aspect-ratio: 16/9;
-  }
-  
+
   .movieCarousel__eyebrow {
-    margin-bottom: 0rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px black;
+    font-size: 1.6rem;
   }
-  
+
   .movieCarousel__caption {
-    font-family: "Kanit", sans-serif;
-    font-size: 2rem;
-    line-height: 1;
-    margin-bottom: 0;
-    text-shadow: 0 2px 4px black;
+    font-size: 5rem;
   }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    transition: background-color 0.4s ease;
-    background-color: rgba(105, 22, 26, 0);
-  }
-  
-  .carousel-control-prev:hover,
-  .carousel-control-next:hover {
-    background-color: rgba(105, 22, 26, 0.3);
-  }
-
-  #menuAd .card, #loyaltyAd .card{
-    padding: 0;
-  }
-
-  @media screen and (min-width: 768px) {
-    .carousel-caption {
-      padding: 1rem 0;
-      bottom: 0;
-    }
-  
-    .movieCarousel__eyebrow {
-      font-size: 1.6rem;
-    }
-  
-    .movieCarousel__caption {
-      font-size: 5rem;
-    }
-  }
+}
