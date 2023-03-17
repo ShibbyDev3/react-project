@@ -1,14 +1,11 @@
-import { Container, Row, Col, Button } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
+import { USDollar } from "../utils/USDollarFormat";
 import { useContext } from "react";
 import "../pages/Checkout.css";
 
 const CartSummary = () => {
   const { cartItems } = useContext(ShoppingCartContext);
-  let USDollar = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
   return (
     <>
       <Row className="justify-content-between cartSummary__row">

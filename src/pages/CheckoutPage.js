@@ -1,7 +1,8 @@
 import { Container, Row, Col, Button } from "reactstrap";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, Fragment } from "react";
 import CartSummary from "../components/CartSummary";
+import { USDollar } from "../utils/USDollarFormat";
 import "../pages/Checkout.css";
 
 const CheckoutPage = () => {
@@ -31,15 +32,15 @@ const CheckoutPage = () => {
                   });
                   return (
                     <Row className="cart-item" key={index}>
-                      <Col xs="12" md="2">
+                      <Col xs="6" xl="3">
                         <img src={movie.poster} alt={movie.name} />
                       </Col>
-                      <Col>
+                      <Col xs="6" xl="4">
                         <p className="cart-header">Choose A Time</p>
                         <div className="timeGroup">
                           {movie.showtimes.map((time, index) => {
                             return (
-                              <>
+                              <Fragment key={index}>
                                 <input type="radio" className="btn-check" id={`${movie.id}-${time}`} autoComplete="off" name={`${movie.id}`} defaultChecked={parseInt(index) === parseInt(item.time) ? `true` : ""} />
                                 <label
                                   className="btn btn-outline-primary cartButtons"
@@ -52,14 +53,15 @@ const CheckoutPage = () => {
                                 >
                                   {time}
                                 </label>
-                              </>
+                              </Fragment>
                             );
                           })}
                         </div>
                       </Col>
-                      <Col>
-                        <p className="cart-header">How Many Tickets?</p>
+                      <Col xs="4" xl="1">
+                        <p className="cart-header">Qty</p>
                         <input
+                          className="cartInput"
                           type="number"
                           defaultValue={item.qty}
                           min="1"
@@ -69,7 +71,11 @@ const CheckoutPage = () => {
                           }}
                         ></input>
                       </Col>
-                      <Col className="removeContainer">
+                      <Col xs="4" xl="2">
+                        <p className="cart-header">Price</p>
+                          <p className="itemPrice">{USDollar.format(item.qty * 9.99)}</p>
+                      </Col>
+                      <Col className="removeContainer" xs="4" xl="2">
                         <p className="cart-header">Remove?</p>
                         <Button className="removeButton" data-movieid={movie.id} onClick={removeFromCart}>
                           <i className="fa fa-trash" aria-hidden="true"></i>
@@ -79,8 +85,8 @@ const CheckoutPage = () => {
                   );
                 })}
               </Col>
-              <Col xs="12" md="4">
-                <div className="total">
+              <Col xs="12" md="4" className="total">
+                <div>
                   <CartSummary />
                 </div>
               </Col>

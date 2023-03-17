@@ -28,8 +28,7 @@ const MoviePage = () => {
                 <Row>
                     <Col xs="12" md="4">
                         <img src={movie.poster} alt={movie.name} />
-                        {cartItems.find(id => { return id === movie.id}) + 1 ? <Link to='/checkout' className="getMovieTicket btn"> Already In Your Cart </Link> : <Link to='/checkout' onClick={() => {addToCart(movie.id)}} className="getMovieTicket btn"> Get Tickets </Link>}
-                        
+                        {movie.nowPlaying ? cartItems.find(id => { return id.id === movie.id}) + 1 ? <Link to='/checkout' className="getMovieTicket btn"> Already In Your Cart </Link> : <Link to='/checkout' onClick={() => {addToCart(movie.id)}} className="getMovieTicket btn"> Get Tickets </Link> : null}
                     </Col>
                     <Col xs="12" md="8">
                         <h2>Trailer</h2>

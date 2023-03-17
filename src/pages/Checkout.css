@@ -7,6 +7,7 @@
   aspect-ratio: 2/3;
   border: #420e11 2px solid;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
 }
 
 .timeGroup {
@@ -57,7 +58,20 @@
   box-shadow: none;
 }
 
+.cartInput{
+  width: 100%;
+  text-align: center;
+}
+.itemPrice{
+  text-align: center;
+}
+
 .total {
+  
+  background: #dddddd;
+}
+
+.total > div{
   padding: 2rem;
 }
 
@@ -74,6 +88,5 @@ margin: 0;
 @media (min-width: 768px) {
   .total {
     min-height: 80vh;
-    background: #dddddd;
   }
 }
