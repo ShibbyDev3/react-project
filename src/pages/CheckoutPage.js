@@ -26,30 +26,30 @@ const CheckoutPage = () => {
             </Row>
             <Row>
               <Col xs="12" md="8">
-                {cartItems.map((item, index) => {
+                {cartItems.map((item) => {
                   const movie = movieData.find((film) => {
                     return film.id === item.id;
                   });
                   return (
-                    <Row className="cart-item" key={index}>
+                    <Row className="cart-item" key={movie.id}>
                       <Col xs="6" xl="3">
                         <img src={movie.poster} alt={movie.name} />
                       </Col>
                       <Col xs="6" xl="4">
                         <p className="cart-header">Choose A Time</p>
                         <div className="timeGroup">
-                          {movie.showtimes.map((time, index) => {
+                          {movie.showtimes.map((time) => {
                             return (
-                              <Fragment key={index}>
-                                <input type="radio" className="btn-check" id={`${movie.id}-${time}`} autoComplete="off" name={`${movie.id}`} defaultChecked={parseInt(index) === parseInt(item.time) ? `true` : ""} />
+                              <Fragment key={`${movie.id}-${time.replace(" ","")}`}>
+                                <input type="radio" className="btn-check" id={`${movie.id}-${time.replace(" ","")}`} autoComplete="off" name={`${movie.id}`} defaultChecked={time.replace(" ","") === item.timeValue.replace(" ","") ? `true` : ""} />
                                 <label
                                   className="btn btn-outline-primary cartButtons"
                                   data-cartid={item.id}
-                                  data-id={index}
+                                  data-id={time}
                                   onClick={(event) => {
                                     modifyTime(event.target.getAttribute(`data-cartid`), event.target.getAttribute(`data-id`), event.target.innerText);
                                   }}
-                                  htmlFor={`${movie.id}-${time}`}
+                                  htmlFor={`${movie.id}-${time.replace(" ","")}`}
                                 >
                                   {time}
                                 </label>
