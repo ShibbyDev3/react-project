@@ -1,5 +1,10 @@
-export const validateContactForm = (values) => {
-    const errors = {};
+export const validateContactForm = (values: any) => {
+    const errors = {
+        email:'',
+        firstName:'',
+        lastName:'',
+        request:''
+    };
      
     if(!values.email) {
         errors.email = 'Required';

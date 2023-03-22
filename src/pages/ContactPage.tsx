@@ -2,33 +2,10 @@ import { useState } from "react";
 import { Container, Row, Col, Card, FormGroup, Label, Button } from "reactstrap";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import "./Contact.css";
+import { validateContactForm } from "../utils/validateContactForm";
 
 const ContactPage = () => {
   const [formSent, setFormSent] = useState(false);
-  const validateContactForm = (values) => {
-    const errors = {};
-    const emailPattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-
-    if (!values.email) {
-      errors.email = "Required";
-    } else if (!emailPattern.test(values.email)){
-        errors.email = "Please Use A Valid Email";
-    }
-
-    if (!values.firstName) {
-      errors.firstName = "Required";
-    }
-
-    if (!values.lastName) {
-      errors.lastName = "Required";
-    }
-
-    if (!values.request) {
-      errors.request = "Required";
-    }
-
-    return errors;
-  };
 
   return (
     <>
