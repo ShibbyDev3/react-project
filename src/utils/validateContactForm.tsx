@@ -1,26 +1,25 @@
-export const validateContactForm = (values: any) => {
-    const errors = {
-        email:'',
-        firstName:'',
-        lastName:'',
-        request:''
-    };
-     
-    if(!values.email) {
-        errors.email = 'Required';
-    }
+export const validateContactForm = (values: { email: string; firstName: string; lastName: string; request: string }) => {
+  interface errors {
+    [key: string]: any;
+  }
 
-    if(!values.firstName) {
-        errors.firstName = 'Required';
-    }
+  const errors: errors = {};
 
-    if(!values.lastName) {
-        errors.lastName = 'Required';
-    }
+  if (!values.email) {
+    errors.email = "Required";
+  }
 
-    if(!values.request) {
-        errors.request = 'Required';
-    }
+  if (!values.firstName) {
+    errors.firstName = "Required";
+  }
 
-    return errors
-}
+  if (!values.lastName) {
+    errors.lastName = "Required";
+  }
+
+  if (!values.request) {
+    errors.request = "Required";
+  }
+
+  return errors;
+};
