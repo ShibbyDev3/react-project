@@ -3,7 +3,7 @@ import { ShoppingCartContext } from "../context/ShoppingCartContext";
 import { useContext, useEffect, useState, Fragment } from "react";
 import CartSummary from "../components/CartSummary";
 import { USDollar } from "../utils/USDollarFormat";
-import "../pages/Checkout.css";
+import "../css/Checkout.css";
 
 const CheckoutPage = () => {
   const { cartItems, removeFromCart, modifyTime, modifyQty } = useContext(ShoppingCartContext);

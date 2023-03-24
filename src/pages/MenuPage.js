@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "reactstrap";
 import MenuItems from "../components/MenuItems";
 import { useEffect, useState } from "react";
-import "./Menu.css";
+import "../css/Menu.css";
 
 const MenuPage = () => {
   const [menuData, setMenuData] = useState([]);

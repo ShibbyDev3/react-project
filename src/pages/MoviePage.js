@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Container, Row, Col } from "reactstrap";
-import '../pages/movie.css'
+import '../css/movie.css'
 import { ShoppingCartContext } from '../context/ShoppingCartContext';
 import { useContext,useEffect, useState } from 'react';
 

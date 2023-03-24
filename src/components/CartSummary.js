@@ -2,7 +2,7 @@ import { Row, Col } from "reactstrap";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
 import { USDollar } from "../utils/USDollarFormat";
 import { useContext } from "react";
-import "../pages/Checkout.css";
+import "../css/Checkout.css";
 
 const CartSummary = () => {
   const { cartItems } = useContext(ShoppingCartContext);

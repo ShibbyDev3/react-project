@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card } from "reactstrap";
 import SimpleSlider from "../components/SlickCarousel";
-import './Home.css'
+import '../css/Home.css'
 
 const HomePage = () => {
   return (

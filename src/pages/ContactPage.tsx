@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Card, FormGroup, Label, Button } from "reactstrap";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import "./Contact.css";
+import "../css/Contact.css";
 import { validateContactForm } from "../utils/validateContactForm";
 
 const ContactPage = () => {

@@ -1,5 +1,5 @@
 import { Row, Col, Card, CardBody } from "reactstrap";
-import "../pages/Movies.css";
+import "../css/Movies.css";
 
 const MenuItems = ({ array, category }) => {
   return (

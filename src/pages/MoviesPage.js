@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "reactstrap";
 import { useState, useEffect } from "react";
 import MovieItems from "../components/MovieItems";
-import "./Movies.css";
+import "../css/Movies.css";
 
 const MoviesPage = () => {
   const [movieData, setMovieData] = useState([]);
