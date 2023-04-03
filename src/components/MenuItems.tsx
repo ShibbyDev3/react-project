@@ -1,7 +1,7 @@
 import { Row, Col, Card, CardBody } from "reactstrap";
 import "../css/Movies.css";
 
-const MenuItems = ({ array, category }) => {
+const MenuItems = ({ array, category }:{array: any[], category:string}) => {
   return (
     <>
      {array.map((menuItem) => {

@@ -1,4 +1,4 @@
-import React from "react";
+// @ts-ignore
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
