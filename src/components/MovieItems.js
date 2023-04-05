@@ -1,17 +1,10 @@
 import { Col } from "reactstrap";
 import { Link } from 'react-router-dom';
 
-const MovieItems = ({ array, nowPlaying }:{array: any[], nowPlaying: boolean}) => {
-  interface movieShape {
-    nowPlaying: boolean,
-    id: number,
-    path: string,
-    poster: string,
-    name: string
-  }
+const MovieItems = ({ array, nowPlaying }) => {
   return (
     <>
-      {array.map((movie:movieShape) => {
+      {array.map((movie) => {
         if (movie.nowPlaying === nowPlaying) {
           return (
             <Col xs="6" md="4" key={movie.id}>

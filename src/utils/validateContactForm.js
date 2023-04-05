@@ -1,9 +1,6 @@
-export const validateContactForm = (values: { email: string; firstName: string; lastName: string; request: string }) => {
-  interface errors {
-    [key: string]: any;
-  }
+export const validateContactForm = (values) => {
 
-  const errors: errors = {};
+  const errors = {};
 
   if (!values.email) {
     errors.email = "Required";

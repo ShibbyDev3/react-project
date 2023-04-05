@@ -1,4 +1,3 @@
-// @ts-ignore
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
@@ -8,9 +7,11 @@ export default function SimpleSlider() {
   var settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    pauseOnHover: true,
   };
   return (
     <Slider id="movieCarousel" {...settings}>
