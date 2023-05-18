@@ -10,7 +10,7 @@ const MoviePage = () => {
     const [movie, setMovie] = useState({});
     
     useEffect(() =>{
-      fetch("https://shibbydev3.github.io/data/moviehouse/movies.json")
+      fetch("https://nucamp-nodejs.onrender.com/api/movies")
       .then(response => response.json())
       .then(data => {setMovie(data.find(movie => { return movie.path === path}))})
     },[path]);

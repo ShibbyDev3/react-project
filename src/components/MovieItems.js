@@ -8,6 +8,7 @@ const MovieItems = ({ array, nowPlaying }) => {
         if (movie.nowPlaying === nowPlaying) {
           return (
             <Col xs="6" md="4" key={movie.id}>
+              {console.log(movie)}
               <Link to={`${movie.path}`}>
                 <img src={movie.poster} alt={movie.name} />
               </Link>

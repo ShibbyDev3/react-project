@@ -6,7 +6,7 @@ import "../css/Menu.css";
 const MenuPage = () => {
   const [menuData, setMenuData] = useState([]);
   useEffect(() =>{
-    fetch("https://shibbydev3.github.io/data/moviehouse/menu.json")
+    fetch("https://nucamp-nodejs.onrender.com/api/menu")
     .then(response => response.json())
     .then(data => setMenuData(data))
   },[]);
